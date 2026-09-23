@@ -18,46 +18,61 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
             insets
         }
         val boton = findViewById<Button>(R.id.button)
         val saludo = findViewById<TextView>(R.id.textView2)
         val contadorTexto = findViewById<TextView>(R.id.textView)
-
+        // Listener del botón
         boton.setOnClickListener {
             contador++
             saludo.text = "¡La Comunidad del Anillo ha partido hacia Mordor!"
             contadorTexto.text = "Miembros reunidos: $contador"
-            Log.d("TierraMedia", "Un nuevo miembro se une a la Comunidad")
-
-        boton.setOnClickListener { //Listener del boton que hace que al interactuar con el haga lo siguiente
-            contador++ //Aumente la variable contador de viajeros
-            saludo.text = "¡La Comunidad del Anillo ha partido hacia Mordor!" // Imprime un nuevo mensaje de texto
-            contadorTexto.text = "Miembros reunidos: $contador" //Imprime el valor de la variable contador
-            Log.d("TierraMedia", "Un nuevo miembro se une a la Comunidad") //Muestra un mensaje de funcionamiento en el log
-
+            Log.d(
+                "TierraMedia",
+                "Un nuevo miembro se une a la Comunidad"
+            )
         }
     }
     override fun onStart() {
         super.onStart()
-        Log.d("TierraMedia", "El Anillo abandona Rivendell y comienza su viaje")
-        Log.d("TierraMedia", "El Anillo abandona Rivendell y comienza su viaje") //
+        Log.d(
+            "TierraMedia",
+            "El Anillo abandona Rivendell y comienza su viaje"
+        )
     }
     override fun onResume() {
         super.onResume()
-        Log.d("TierraMedia", "La Comunidad continúa su viaje hacia Mordor")
+        Log.d(
+            "TierraMedia",
+            "La Comunidad continúa su viaje hacia Mordor"
+        )
     }
     override fun onPause() {
         super.onPause()
-        Log.d("TierraMedia", "La Comunidad hace una pausa en su camino")
+        Log.d(
+            "TierraMedia",
+            "La Comunidad hace una pausa en su camino"
+        )
     }
     override fun onStop() {
         super.onStop()
-        Log.d("TierraMedia", "La Comunidad abandona temporalmente la escena")
+        Log.d(
+            "TierraMedia",
+            "La Comunidad abandona temporalmente la escena"
+        )
     }
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("TierraMedia", "El viaje del Anillo llega a su fin")
+        Log.d(
+            "TierraMedia",
+            "El viaje del Anillo llega a su fin"
+        )
     }
 }
