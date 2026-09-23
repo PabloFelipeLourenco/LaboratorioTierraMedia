@@ -24,16 +24,28 @@ class MainActivity : AppCompatActivity() {
         val boton = findViewById<Button>(R.id.button)
         val saludo = findViewById<TextView>(R.id.textView2)
         val contadorTexto = findViewById<TextView>(R.id.textView)
+<<<<<<< HEAD
         boton.setOnClickListener {
             contador++
             saludo.text = "¡La Comunidad del Anillo ha partido hacia Mordor!"
             contadorTexto.text = "Miembros reunidos: $contador"
             Log.d("TierraMedia", "Un nuevo miembro se une a la Comunidad")
+=======
+        boton.setOnClickListener { //Listener del boton que hace que al interactuar con el haga lo siguiente
+            contador++ //Aumente la variable contador de viajeros
+            saludo.text = "¡La Comunidad del Anillo ha partido hacia Mordor!" // Imprime un nuevo mensaje de texto
+            contadorTexto.text = "Miembros reunidos: $contador" //Imprime el valor de la variable contador
+            Log.d("TierraMedia", "Un nuevo miembro se une a la Comunidad") //Muestra un mensaje de funcionamiento en el log
+>>>>>>> a694adf (Comentarios)
         }
     }
     override fun onStart() {
         super.onStart()
+<<<<<<< HEAD
         Log.d("TierraMedia", "El Anillo abandona Rivendell y comienza su viaje")
+=======
+        Log.d("TierraMedia", "El Anillo abandona Rivendell y comienza su viaje") //
+>>>>>>> a694adf (Comentarios)
     }
     override fun onResume() {
         super.onResume()
