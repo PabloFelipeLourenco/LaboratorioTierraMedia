@@ -10,10 +10,10 @@ import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    private var contador = 0
+    private var contador = 0 //Contador de miembros de la Comunidad
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("TierraMedia", "El viaje comienza en Rivendell")
+        Log.d("TierraMedia", "El viaje comienza en Rivendell") //Mensaje inicial en Logcat
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -26,20 +26,23 @@ class MainActivity : AppCompatActivity() {
             )
             insets
         }
+        //Conectamos los elementos de la interfaz con el código
         val boton = findViewById<Button>(R.id.button)
         val saludo = findViewById<TextView>(R.id.textView2)
         val contadorTexto = findViewById<TextView>(R.id.textView)
-        // Listener del botón
+        //Acciones que se realizan al pulsar el botón
         boton.setOnClickListener {
             contador++
             saludo.text = "¡La Comunidad del Anillo ha partido hacia Mordor!"
             contadorTexto.text = "Miembros reunidos: $contador"
+            //Mensaje en Logcat cada vez que se pulsa el botón
             Log.d(
                 "TierraMedia",
                 "Un nuevo miembro se une a la Comunidad"
             )
         }
     }
+    //Se ejecuta cuando la actividad empieza a ser visible
     override fun onStart() {
         super.onStart()
         Log.d(
@@ -47,6 +50,7 @@ class MainActivity : AppCompatActivity() {
             "El Anillo abandona Rivendell y comienza su viaje"
         )
     }
+    //Se ejecuta cuando la actividad pasa a primer plano
     override fun onResume() {
         super.onResume()
         Log.d(
@@ -54,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             "La Comunidad continúa su viaje hacia Mordor"
         )
     }
+    //Se ejecuta cuando la actividad deja de estar en primer plano
     override fun onPause() {
         super.onPause()
         Log.d(
@@ -61,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             "La Comunidad hace una pausa en su camino"
         )
     }
+    //Se ejecuta cuando la actividad deja de ser visible
     override fun onStop() {
         super.onStop()
         Log.d(
@@ -68,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             "La Comunidad abandona temporalmente la escena"
         )
     }
+    //Se ejecuta cuando la actividad se destruye
     override fun onDestroy() {
         super.onDestroy()
         Log.d(
